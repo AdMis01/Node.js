@@ -27,6 +27,8 @@ http.createServer(
     });
     req.on("end",function(){
         const pardes = parse(data);
+        console.log(data);
+        console.log(pardes);
         console.log(JSON.stringify(pardes));
         res.writeHead(200);
         res.write(htmlForm);
