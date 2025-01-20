@@ -24,11 +24,17 @@ http.createServer(
             let form = new formidable.IncomingForm();
             form.parse(req,function(err,fields,files){
                 console.log(JSON.stringify(files));
-                let tempPath = files.file1.filepath;
-                let newPath = "./static/" + files.file1.originalFilename;
 
-                fs.rename(tempPath, newPath, function(err){
+                const uploadedFile = Array.isArray(files.file1) ? files.file1[0] : files.file1;
+
+                let tempPath = uploadedFile.filepath;
+                let newPath = "./static/" + uploadedFile.originalFilename;
+                console.log(tempPath);
+                console.log(newPath);
+
+                fs.copyFile(tempPath, newPath, function(err){
                     if(err) {
+                        console.log(err);
                         res.end("file upload error");
                     }else{
                         res.end("file send succsesfuls");
@@ -38,7 +44,9 @@ http.createServer(
         }else{
             res.writeHead(200,{"content-type": "text/html"});
             res.write(htmlForm);
-            res.end();
+            return res.end();
         }
     }
-).listen(8080);
+).listen(8080,function(){
+    console.log("http://localhost:8080/");
+});
