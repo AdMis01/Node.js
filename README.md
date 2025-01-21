@@ -30,3 +30,6 @@ npm install -D nodemon
 nodemon server.js
 ```
 najlepiej globanie to zainstalować
+```
+npm install mongodb
+```
