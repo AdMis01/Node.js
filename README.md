@@ -30,6 +30,8 @@ npm install -D nodemon
 nodemon server.js
 ```
 najlepiej globanie to zainstalować
+
+Instalowanie wtyczki do obsługiwania MongoDB
 ```
 npm install mongodb
 ```
