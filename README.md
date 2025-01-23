@@ -8,10 +8,10 @@ npm init /-y
 ```
 Przykładowe pakiety które są stosowane
 ```
-npm install lodash
-npm install underscore --D d deweloperskie
-npm install axios -g g instaluje globalnie
-npm install formidable - uplodowanie plików na server
+npm install lodash - funkcje przydatne do pracy z tablicami 
+npm install underscore --D d deweloperskie podobne do Lodash
+npm install axios -g g instaluje globalnie - biblioteka do wykonywania zapytań HTTP
+npm install formidable - uplodowanie plików na server i obsługa formularzy
 ```
 Wyświetlanie listy zainstalowanych pakietów z " -g " odwołuje się do globalnych zainstalowanych pakietów.
 ```

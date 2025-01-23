@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: aquamarine;
+}
+
+.quote-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.quote-text{
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quote-author{
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border: none;
+    background-color:aqua;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+button:hover{
+    background-color:rgb(8, 131, 131);
+
+}
