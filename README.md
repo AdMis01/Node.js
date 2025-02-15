@@ -23,6 +23,10 @@ Aktualizowanie wszystkich pakietów
 ```
 npm update 
 ```
+Odpalenie skrykty/aplikacji
+```
+node server.js
+```
 Automatyczne uruchamianie serwera node.js za pośrednictwem pakietu nodemon
 ```
 npm install -D nodemon
@@ -34,4 +38,8 @@ najlepiej globanie to zainstalować
 Instalowanie wtyczki do obsługiwania MongoDB
 ```
 npm install mongodb
+```
+Do mogelowania danych aplikacji
+```
+npm install mongoose
 ```
