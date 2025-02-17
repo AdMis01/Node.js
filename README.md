@@ -19,6 +19,10 @@ npm list
 
 npm list -g
 ```
+Instalowanie pakietów globalnie
+```
+npm install axios -g
+```
 Aktualizowanie wszystkich pakietów
 ```
 npm update 
