@@ -43,3 +43,7 @@ Do mogelowania danych aplikacji
 ```
 npm install mongoose
 ```
+Do zainstalowania frameworka express
+```
+npm install express
+```
