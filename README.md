@@ -51,3 +51,11 @@ Do zainstalowania frameworka express
 ```
 npm install express
 ```
+Doinstalowywanie do obdługi sessji i cookies
+```
+npm install cookie-session
+```
+Potrzebny forlder apliakacji np views > template |pages > home.ejs i public oraz plik np ejs_test.js
+```
+npm install ejs
+```
