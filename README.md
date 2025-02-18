@@ -59,3 +59,7 @@ Potrzebny forlder apliakacji np views > template |pages > home.ejs i public oraz
 ```
 npm install ejs
 ```
+Instalowanie driverów do MySql
+```
+npm install mysql
+```
