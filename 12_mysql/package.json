@@ -1,5 +1,18 @@
 {
   "dependencies": {
-    "mysql": "^2.18.1"
-  }
+    "mysql": "^2.18.1",
+    "mysql2": "^3.12.0"
+  },
+  "name": "12_mysql",
+  "version": "1.0.0",
+  "main": "mysql.js",
+  "type": "module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
