@@ -59,7 +59,8 @@ Potrzebny forlder apliakacji np views > template |pages > home.ejs i public oraz
 ```
 npm install ejs
 ```
-Instalowanie driverów do MySql
+Instalowanie driverów do MySql i jeszcze musisz użyć npm init -y
 ```
 npm install mysql
+npm install mysql2
 ```
