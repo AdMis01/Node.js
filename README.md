@@ -64,3 +64,8 @@ Instalowanie driverów do MySql i jeszcze musisz użyć npm init -y
 npm install mysql
 npm install mysql2
 ```
+ORM sequelize tak jak odwzorowanie obiektowej architektury systemu informatycznego na bazę danych
+```
+npm install mysql2
+npm install sequelize
+```
