@@ -8,7 +8,7 @@ const sequelize = new Sequelize('test','root','',{
 try{
     await sequelize.authenticate();
     console.log('polaczono');
-    await sequelize.close();
+    //await sequelize.close();
 }catch(err){
     console.error(err);
 }
@@ -43,4 +43,24 @@ const Animal = sequelize.define('Animal',{
 
 await sequelize.sync().then(() => {
     console.log('Animal tabela stworzona');
-})
+}).catch(err => {
+    console.log('Blad przy tworzeniu tabeli ',err);
+});
+
+await Animal.create({
+    name: 'parrot',
+    type: 'bird'
+}).then(res => {
+    console.log(res);
+}).catch(err => {
+    console.log('Blad przy zapisywaniu danych w tabeli ',err);
+});
+
+await Animal.create({
+    name: 'shiba inu',
+    type: 'dog'
+}).then(res => {
+    console.log(res);
+}).catch(err => {
+    console.log('Blad przy zapisywaniu danych w tabeli ',err);
+});
