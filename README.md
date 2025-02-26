@@ -69,3 +69,7 @@ ORM sequelize tak jak odwzorowanie obiektowej architektury systemu informatyczne
 npm install mysql2
 npm install sequelize
 ```
+
+```
+npm install express passport express-session passport-local ejs
+```
