@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>edit user</h3>
+    <%= include('../partials/navbar', {user}) %>
+    <form action="/admin/users/edit/<%= userToEdit._id %>" method="post">
+        <input type="hidden" name="id" value="<%= userToEdit._id %>">
+        name: <input type="text" name="name" value="<%= userToEdit.name %>">
+        <br><br>
+        surname: <input type="text" name="surname" value="<%= userToEdit.surname %>">
+        <br><br>
+        email: <input type="text" name="email" value="<%= userToEdit.email %>">
+        <br><br>
+        <!--password <input type="password" name="password" value="<%= userToEdit._id %>">-->
+        <br><br>
+        <button type="submit">dodaj</button>
+    </form>
+</body>
+</html>
