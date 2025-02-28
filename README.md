@@ -69,12 +69,12 @@ ORM sequelize tak jak odwzorowanie obiektowej architektury systemu informatyczne
 npm install mysql2
 npm install sequelize
 ```
-
+Zestaw polecienia do zainstalowania listy pakietów do projektu 
 ```
 npm install express passport express-session passport-local ejs
 npm install express passport express-session passport-local ejs mongodb mongoose
 ```
-
+Pakiet do tworzenie kryptowanych wiadomości 
 ```
 npm install bcryptjs
 ```
