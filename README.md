@@ -72,4 +72,9 @@ npm install sequelize
 
 ```
 npm install express passport express-session passport-local ejs
+npm install express passport express-session passport-local ejs mongodb mongoose
+```
+
+```
+npm install bcryptjs
 ```
