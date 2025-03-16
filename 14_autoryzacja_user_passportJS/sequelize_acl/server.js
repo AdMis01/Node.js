@@ -4,10 +4,9 @@ import expressSession from 'express-session';
 import * as path from 'path';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { UserController } from './controllers/UserController.js';
 import { authRole } from './utility/acluth.js';
-
-const userController = new UserController();
+import { usersControler,subjectController,gradeController,schoolController } from './controllers/controller.js';
+ 
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();

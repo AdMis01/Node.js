@@ -1,6 +1,7 @@
 import passport from "passport";
 import localStrategy from "passport-local";
-import {User,makeUser} from "../models/user.model.js";
+import {User} from "../models/user.model.js";
+import { usersControler } from "../controllers/controller.js";
 
 passport.serializeUser((user,done) =>{
     console.log('serializeUser(), user.id:', user.id);
@@ -9,7 +10,7 @@ passport.serializeUser((user,done) =>{
 
 passport.deserializeUser(async (id,done) => {
     try{
-        const userDb = await User.findById(id);
+        const userDb = await usersControler.getById(id);
         console.log('deserializeUser(), userDb:', userDb);
         done(null,userDb);
 
@@ -26,14 +27,16 @@ passport.use(
     },
     async (email, password,done) => {
         try{
-            const userExists = await User.findOne({'email': email});
+            const userExists = await usersControler.getUserByEmail(email);
             if(userExists){
                 return done(null,false);
             }
 
-            const user = makeUser(email,password);
-
-            const userDb = await user.save();
+            const userDb = usersControler.createUser({
+                email,
+                password
+            });
+            console.log(userDb);
             return done(null,userDb);
         }catch(err){
             done(err);
@@ -43,12 +46,12 @@ passport.use(
 
 const authUser = async (req, email,password,done) => {
     try{
-        const authenticatedUser = await User.findOne({email});
+        const authenticatedUser = await usersControler.getUserByEmail(email);
 
         if(!authenticatedUser){
             return done(null, false);
         }
-        if(!authenticatedUser.validPassword(password)){
+        if(!usersControler.validPassword(password,authenticatedUser)){
             return done(null,false);
         }
 

@@ -8,6 +8,8 @@ function getGuestDefaultUser(){
 
 function authRole(req,res,next){
 
+    return next();//na czas developmentu
+
     console.log('authRole');
     const resource = req.route.path;
     const method = req.method.toLowerCase();
