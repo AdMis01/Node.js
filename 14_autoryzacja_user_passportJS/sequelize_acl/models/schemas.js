@@ -12,7 +12,54 @@ User.belongsTo(School, {
     foreignKey: 'schoolId'
 });
 
-School.belongsTo(User, {as})
+School.belongsTo(User, {as: 'director'});
+
+School.hasMany(Subject, {
+    foreignKey: 'schoolId'
+});
+
+Subject.belongsTo(School, {
+    foreignKey: 'schoolId'
+});
+
+const SubjectUser = sequelize.define('SubjectUser', {}, {
+    timestamps: false
+});
+
+Subject.belongsToMany(User, {
+    through: SubjectUser,
+    foreignKey: 'subjectId'
+});
+
+User.belongsToMany(Subject, {
+    through: SubjectUser,
+    foreignKey: 'userId'
+});
+
+Subject.belongsTo(User,{as: 'teacher'});
+
+Subject.hasMany(Grade, {
+    foreignKey: 'subjectId'
+});
+
+Grade.belongsTo(Subject, {
+    foreignKey: 'subjectId'
+});
+
+Grade.belongsTo(User, {as: 'teacher'});
+
+User.hasMany(Grade, {
+    foreignKey: 'studentId'
+});
+
+Grade.belongsTo(Grade, {
+    foreignKey: 'studentId'
+});
+
+Grade.belongsTo(School);
+
+await sequelize.sync();
+
 
 export {
     User,
