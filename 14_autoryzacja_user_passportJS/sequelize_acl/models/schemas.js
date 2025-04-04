@@ -52,13 +52,13 @@ User.hasMany(Grade, {
     foreignKey: 'studentId'
 });
 
-Grade.belongsTo(Grade, {
+Grade.belongsTo(User, {
     foreignKey: 'studentId'
 });
 
 Grade.belongsTo(School);
 
-await sequelize.sync();
+await sequelize.sync({force: true});
 
 
 export {

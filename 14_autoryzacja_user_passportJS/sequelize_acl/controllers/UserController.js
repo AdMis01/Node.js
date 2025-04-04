@@ -15,15 +15,16 @@ export class UsersController {
         });
     }
 
-    async createUser(userData,schoolDb){
-        const salt = await brcypt.getSalt(10);
+    async createUser(userData, schoolDb) {
+        const salt = await brcypt.genSalt(10);
         userData.password = await brcypt.hash(userData.password, salt);
+
         const userDb = await User.create(userData);
 
-        if(schoolDb){
+        if (schoolDb) {
             await userDb.setSchool(schoolDb);
-
         }
+
         return userDb;
     }
 

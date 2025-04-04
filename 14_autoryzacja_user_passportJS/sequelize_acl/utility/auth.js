@@ -25,7 +25,7 @@ passport.use(
         usernameField: 'email',
         passwordField: 'password'
     },
-    async (email, password,done) => {
+    async (req,email, password,done) => {
         try{
             const userExists = await usersControler.getUserByEmail(email);
             if(userExists){
@@ -33,8 +33,13 @@ passport.use(
             }
 
             const userDb = usersControler.createUser({
-                email,
-                password
+                name: req.body.name,
+                surname: req.body.suname,
+                email: email,
+                password: password,
+                address: req.body.address,
+                age: req.body.age,
+                schoolId: req.body.schoolId,
             });
             console.log(userDb);
             return done(null,userDb);
